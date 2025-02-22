@@ -1,5 +1,6 @@
 package com.springproject.messagingapp.controller;
 
+import com.springproject.messagingapp.model.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.PublicKey;
@@ -24,5 +25,11 @@ public class HelloRestController {
     @GetMapping("/param/{name}")
     public String showPathHello(@PathVariable String name){
         return "Hello, " + name + " from BridgeLabz";
+    }
+
+    // create a post request
+    @PostMapping("/post")
+    public void postUser(@RequestBody User user){
+        System.out.println(user.getFirstName());
     }
 }
