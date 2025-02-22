@@ -1,9 +1,8 @@
 package com.springproject.messagingapp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.security.PublicKey;
 
 @RestController
 @RequestMapping("/hello")
@@ -15,4 +14,9 @@ public class HelloRestController {
         return "Hello from Bridgelabz";
     }
 
+    // get request with query
+    @GetMapping("/q")
+    public String showHello(@RequestParam String name){
+        return "Hello, " + name + " from BridgeLabz";
+    }
 }
