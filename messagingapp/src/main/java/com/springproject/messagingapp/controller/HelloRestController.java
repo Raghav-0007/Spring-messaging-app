@@ -32,4 +32,10 @@ public class HelloRestController {
     public void postUser(@RequestBody User user){
         System.out.println(user.getFirstName());
     }
+
+    // create a put request to show the data of user
+    @PutMapping("put/{firstName}")
+    public String getUser(@PathVariable String firstName, @RequestParam String lastName){
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
 }
