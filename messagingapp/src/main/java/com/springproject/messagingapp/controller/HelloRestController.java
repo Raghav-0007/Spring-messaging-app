@@ -19,4 +19,10 @@ public class HelloRestController {
     public String showHello(@RequestParam String name){
         return "Hello, " + name + " from BridgeLabz";
     }
+
+    // create a get request with path variable
+    @GetMapping("/param/{name}")
+    public String showPathHello(@PathVariable String name){
+        return "Hello, " + name + " from BridgeLabz";
+    }
 }
